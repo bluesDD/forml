@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>フォームに入力された数値の取得</title>
+</head>
+ 
+<body>
+    <form>
+        <label for="textForm">値: </label>
+        <input type="text" id="textForm">
+         
+        <button id="button">取得する</button>
+    </form>
+ 
+    <label for="resultForm">取得した値: </label>
+    <input type="text" id="resultForm">
+</body>
+
+
+ 
+<script>
+ 
+// ボタンの要素を取得
+var button = document.getElementById("button");
+ 
+// ボタンをクリックした時の処理
+button.addEventListener("click", function(e) {
+ 
+    e.preventDefault();
+ 
+    // 入力フォームの値を取得
+    var textForm = document.getElementById("textForm").value;
+ 
+    // 取得した値を別の入力フォームに表示
+    var resultForm = document.getElementById("resultForm");
+    resultForm.value = textForm;
+});
+ 
+</script>
+ 
+</html> 
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBHIOIrL7taqJunUfWe_qW0QujtTlzjLY4",
+    authDomain: "gettext-5332e.firebaseapp.com",
+    databaseURL: "https://gettext-5332e.firebaseio.com",
+    projectId: "gettext-5332e",
+    storageBucket: "gettext-5332e.appspot.com",
+    messagingSenderId: "434746037484"
+  };
+  firebase.initializeApp(config);
+</script>
